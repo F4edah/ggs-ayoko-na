@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - Deja Brew</title>
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&family=Montserrat:wght@400;700&display=swap" rel="stylesheet"> 
+    <link rel="stylesheet" href="contactus.css"> 
+</head>
+<body>
+    <nav class="navbar">
+        <a href="/NAPAY/homepage/index.html" class="navbar-brand">Deja Brew</a>
+        <ul class="navbar-nav">
+            <li><a href="/NAPAY/homepage/index.html">Home</a></li>
+            <li><a href="/NAPAY/about/about.html">About Us</a></li>
+            <li><a href="/NAPAY/contact/contactus.html">Contact Us</a></li>
+            <li><a href="/NAPAY/order/order.html">Coffee</a></li>
+            <li><a href="/NAPAY/order/ricemeals/ricemeal.html">Rice Meals</a></li>
+            <li><a href="/NAPAY/order/pastas/pastas.html">Pastas</a></li>
+            <li><a href="/NAPAY/order/drinks/drinks.html">Drinks</a></li>
+            <li><a href="/NAPAY/order/pastries/pastries.html">Pastries & Baked Goods</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <section class="contact-section">
+            <div class="contact-info">
+                <h2 class="contact-title">Our Location</h2>
+                <div class="info-container">
+                    <p><strong>Address:</strong> Rizal St. Sagpon Daraga, Albay 4501 Daraga, Philippines</p>
+                    <p><strong>Phone:</strong> 0997 963 9355</p>
+                    <p><strong>Email:</strong> cendyleea@gmail.com</p>
+                </div>
+
+            <div class="contact-form">
+                <h1 class="contact-title">Get in Touch With Us!</h1>
+                <p class="contact-description">We’d love to hear from you! Fill out the form below for your suggestins and feedback.</p>
+                <form id="contact-form" onsubmit="submitForm(event)">
+                    <div class="form-group">
+                        <label for="name">Your Name:</label>
+                        <input type="text" id="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Your Email:</label>
+                        <input type="email" id="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Your Message:</label>
+                        <textarea id="message" rows="5" required></textarea>
+                    </div>
+                    <button type="submit" class="submit-btn">Send Message</button>
+                </form>
+
+                <div id="message-display" class="message-display">
+                    <h2>Your Message:</h2>
+                    <p id="display-name"></p>
+                    <p id="display-email"></p>
+                    <p id="display-message"></p>
+                </div>
+            </div>
+        </section>
+    </main>
+    <script>
+        function submitForm(event) {
+            event.preventDefault();
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const message = document.getElementById('message').value;
+
+            document.getElementById('display-name').textContent = `Name: ${name}`;
+            document.getElementById('display-email').textContent = `Email: ${email}`;
+            document.getElementById('display-message').textContent = `Message: ${message}`;
+
+            document.getElementById('contact-form').reset();
+            alert('Thank you for your message!');
+        }
+    </script> 
+
+<footer class="footer">
+        <p class="footer-copy">&copy; 2024 Deja Brew Coffee Shop. All Rights Reserved.</p>
+    </div>
+</footer>
+
+</body>
+</html>
